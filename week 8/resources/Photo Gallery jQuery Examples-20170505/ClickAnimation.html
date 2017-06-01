@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>A bit more advanced HTML Photo Gallery with JavaScript</title>
+
+<style type="text/css">
+body {
+	background: #B0B0B0;
+	color: #eee;
+	margin-top: 20px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+a {
+	color: #FFF;
+}
+a:hover {
+	color: yellow;
+	text-decoration: underline;
+}
+.thumbnails img {
+	position: relative;
+	top: 0px;
+	height: 80px;
+	border: 4px solid #555;
+	padding: 1px;
+	
+}
+
+.thumbnails img:hover {
+	border: 4px solid #00ccff;
+	cursor:pointer;
+}
+
+
+
+/* style for the container element */
+
+
+img#fullImage
+{
+	/* set center */
+	margin: 0 auto;
+	border: 4px solid #555;
+	opacity: 0;
+	
+ 
+}
+
+
+
+
+
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type = "text/javascript">
+
+		
+function showImage(ImageElement)
+{
+
+	
+	
+		//to have similar effect as css animation, you need to have to call animate method
+		//on the same element multiple times
+		$("#"+ImageElement.id).animate({top: '10px'});
+		$("#"+ImageElement.id).animate({top: '0px'});
+		$("#fullImage").css("opacity", "0");
+		$("#fullImage").attr("src", ImageElement.src).animate({opacity: "1"},1000 );
+		$("#fullImage").css({"width": "200px","height": "112px"});
+		$("#fullImage").animate({width: "600px", height: "350px"}, 1000);
+}
+
+
+
+//when document is ready, we begin to add event listener
+$(document).ready(function(){
+
+   // jQuery methods go here...
+   //add event listener in jQuery
+   $("#img1").click(function(){showImage(this)});
+	$("#img2").click(function(){showImage(this)});
+	$("#img3").click(function(){showImage(this)});	
+	$("#img4").click(function(){showImage(this)});
+	$("#img5").click(function(){showImage(this)});
+   
+
+
+
+
+
+});
+
+
+
+
+</script>
+</head>
+<body>
+
+<div class="gallery" align="center">
+	<h2>A bit more advanced Gallery with HTML and jQuery</h2>
+	<p>Created by Kan Ngamakeur and Xiaosong Li. Thank you for the image <a target="_blank" href="http://html-tuts.com/">HTML-TUTS.com</a>.</p>
+
+	<br />
+
+	<div class="thumbnails">
+		
+		
+			<img id = "img1"   name="img1" src="images/img1.jpg" alt=""/>
+			<img id = "img2"   name="img2" src="images/img2.jpg" alt=""/>
+			<img id = "img3"   name="img3" src="images/img3.jpg" alt=""/>
+			<img id = "img4"   name="img4" src="images/img4.jpg" alt=""/>
+			<img id = "img5"   name="img5" src="images/img5.jpg" alt=""/>
+		
+	</div><br/>
+
+	<div id = "lightbox" >
+				
+				<img  name="fullImage" src="images/img1.jpg" alt="full image" id = "fullImage" width = "200" height = "112"  />
+			
+	</div>
+	
+	
+
+</div>
+
+
+</body>
+</html>

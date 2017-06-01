@@ -1,0 +1,26 @@
+p:hover{
+  color:green;
+}
+
+p{
+  font-size:100px;
+  font-style:italic;
+  color: blue;
+}
+
+/*a{
+  color:orange;
+  text-decoration: none;
+}*/
+
+
+a:hover{
+  color:orange;
+  text-decoration: none;
+}
+ a:active{
+   color:blue;
+ }
+ a:visited{
+   color:red;
+ }

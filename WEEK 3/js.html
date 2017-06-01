@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>js</title>
+  </head>
+  <body>
+    <h1>JavaScript</h1>
+    <h2>Internet and Website Development</h2>
+    <h3>Dila Beisembayeva</h3>
+    <button onclick='pressClick()'>Click here</button>
+    <script>
+      function pressClick(){
+        console.log('You clicked on the button')
+      }
+    </script>
+
+    <button onclick="changTheButton(this)">Click here</button>
+    <script>
+    function changeTheButton(id){
+      id.innerHTML = 'you can change the text'
+    }
+    </script>
+
+    <h1 id="lecturer">Dila Beisembayeva</h1>
+    <button onclick="changeTheName()">Click here</button>
+    <script>
+      function changeTheName(){
+        var lecturer = document.getElementById('lecturer')
+        lecturer.innerHTML = 'David Nandigam'
+      }
+    </script>
+
+    <h1 id="time"></h1>
+    <button onmouseover="showDate()">Click todat's date</button>
+    <script>
+      function showDate(){
+        var time = document.getElementById('time')
+        time.innerHTML = Date();
+      }
+    </script>
+
+    
+  </body>
+</html>

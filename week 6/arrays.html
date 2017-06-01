@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>draw cycle</title>
+  </head>
+  <body>
+    <p><canvas id="myCanvas" width="500" height="500"></canvas></p>
+    <script>
+      var ctx = document.getElementById("myCanvas").getContext("2d");
+
+      var radius = 20;
+      var width = 500;
+      var height = 500;
+
+      var speedx = [3, 5, 2];
+      var speedy = [2, 2, 1];
+
+      var circlesx = [50, 55, 200];
+      var circlesy = [200, 105, 400];
+
+      var fillColours = ["red", "blue", "yellow"];
+
+      function animate(){
+	       ctx.clearRect(0, 0, width, height);
+	        for(var i = 0; i < circlesx.length; i++){
+		          if(circlesx[i] > (500 - radius) || circlesx[i] < (i + radius))
+		            {speedx[i] = -speedx[i];}
+		          if(circlesy[i] > (500 - radius) || circlesy[i] < (i + radius)){speedy[i] = -speedy[i];}
+                circlesx[i] += speedx[i];
+		            circlesy[i] += speedy[i];
+		         drawMyArc(circlesx[i], circlesy[i], fillColours[i]);}
+              }
+
+      function drawMyArc(x, y, fillit){
+	        ctx.beginPath();
+	        ctx.fillStyle = fillit;
+	        ctx.arc(x, y, 15, 0, 2 * Math.PI, true);
+	        ctx.fill();
+	        ctx.stroke();
+        }
+        setInterval(animate, 10);
+    </script>
+  </body>
+</html>

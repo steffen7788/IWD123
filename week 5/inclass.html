@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>animation</title>
+    <style media="screen">
+      body {
+        margin: 5px;
+      }
+      #myCanvas {
+        border: "white" 1px solid;
+      }
+    </style>
+    <script type="text/javascript">
+      function draw(){
+        var animate = document.getElementById('myCanvas').getContext('2d');
+        animate.fillStyle = 'orange';
+        animate.fillRect(50,50,100,100);
+        animate.rotate(.17);
+        animate.translate(16,0);
+        animate.fillRect(200,50,100,100);
+        animate.fillRect(350,50,100,100);
+
+        animate.beginPath();
+        animate.moveTo(100, 200);
+        animate.lineTo(200, 350);
+        animate.lineTo(100, 25);
+        animate.fill();
+      }
+      window.onload=draw;
+    </script>
+  </head>
+  <body>
+    <Canvas id="myCanvas" width="500" height="500"></Canvas>
+  </body>
+</html>

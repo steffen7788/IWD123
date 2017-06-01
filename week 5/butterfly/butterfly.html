@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>butterfly</title>
+    <style media="screen">
+      #flowers{
+        background-image: url("flowers.jpg");
+        width: 900px;
+        height: 800px;
+        position: relative;
+      }
+      #butterfly{
+        background-image: url("butterfly.gif");
+        width: 90px;
+        height: 90px;
+        background-repeat: no-repeat;
+        position: absolute;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p>
+    <button onclick="move()">Click Me</button>
+    </p>
+    <div id="flowers">
+      <div id="butterfly"></div>
+    </div>
+
+    <script>
+    function move(){
+      var imgobj=document.getElementById("butterfly");
+      var pos = 0;
+      var id = setInterval(frame,10);
+      function frame() {
+        if (pos<650){
+          pos++;
+          imgobj.style.top = pos+'px';
+          imgobj.style.left = pos+'px';
+        }else{
+          clearInterval(id);
+        }
+      }
+    }
+    </script>
+  </body>
+</html>

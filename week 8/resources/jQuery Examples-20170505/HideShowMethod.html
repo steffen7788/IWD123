@@ -1,0 +1,21 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".btn1").click(function(){
+  $("p").hide(2000);
+  });
+  $(".btn2").click(function(){
+  $("p").show(2000);
+  });
+});
+</script>
+</head>
+<body style="background-color:yellow">
+<p style="background-color:red;margin:10px;padding:10px;">This is a paragraph.</p>
+<button class="btn1">Hide</button>
+<button class="btn2">Show</button>
+</body>
+</html>
+

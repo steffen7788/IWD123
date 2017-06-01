@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IWD</title>
+  </head>
+  <body>
+
+    <script>
+      function createNewPerson(name){
+        var obj = {};
+        obj.name = name;
+        obj.greeting = function() {
+          alert('Hi! I\'m' + this.name)
+        };
+        return obj;
+      }
+
+      var person1 = {
+        name:'David',
+        greeting:function(){
+          alert('Hi I\'m '+this.name + '.');
+        }
+      }
+      var person2 = {
+        name:'Dila',
+        greeting:function(){
+          alert('Hi I\'m '+this.name + '.');
+        }
+      }
+
+
+
+  function Person(name){
+  this.name = name;
+  this.greeting = function() {
+    alert('Hi! I\'m' + this.name);
+  };
+
+}
+var person3 = new Person('12345');
+var person4 = new Person('567');
+
+  function Person(first,last,age,gender,interests){
+    this.name={
+      first,
+      last
+    };
+    this.age=age;
+    this.gender=gender;
+    this.interests=interests;
+    this.bio=function(){
+      alert(this.name.first+' '+this.name.last+' is'+ this.age + 'years old. He likes'+this.interests[0]+' and '+this.interests[1])
+    };
+  }
+  var person5 = new Person('John','Smith',32,'male',['music','skiing']);
+
+</script>
+  </body>
+</html>

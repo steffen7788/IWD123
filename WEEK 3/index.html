@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+		<button onclick="whichIsLarger()">Which is larger?</button>
+		<button onclick="sum()">Sum</button>
+		<button onclick="mul()">Mul</button>
+		<button onclick="evenOrOdd()">Even or Odd?</button>
+		<script>
+			function whichIsLarger()
+			{
+				var num1 = prompt('num1');
+				var num2 = prompt('num2');
+				
+				if(num1 > num2)
+				{
+					console.log(num1);
+				}
+				else if(num1 < num2)
+				{
+					console.log(num2);
+				}
+				else
+				{
+					console.log('Equal');
+				}
+			}
+			
+			function sum()
+			{
+				var num1 = prompt('num1');
+				var num2 = prompt('num2');
+				console.log(Number(num1) + Number(num2));
+			}
+			
+			function mul()
+			{
+				var num1 = prompt('num1');
+				var num2 = prompt('num2');
+				console.log(Number(num1) * Number(num2));
+			}
+			
+			function evenOrOdd()
+			{
+				var numbers = new Array(45 - 31);
+				var counter = 31;
+				for(var index = 0; index <= 45 - 31; index++)
+				{
+					numbers[index] = counter;
+					counter++;
+				}
+				
+				for(var index = 0; index <= 45 - 31; index++)
+				{
+					console.log(numbers[index]);
+					if(numbers[index] % 2 == 0)
+					{
+						console.log('even');
+					}
+					else
+					{
+						console.log('odd');
+					}
+					counter++;
+				}
+			}
+		</script>
+    </body>
+</html>

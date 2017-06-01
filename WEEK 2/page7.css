@@ -1,0 +1,18 @@
+p::first-letter{
+  font-size: 300%;
+  color:red;
+
+}
+
+
+p{
+  color:red;
+}
+p::first-line{
+  color:orange;
+}
+
+.rounded-corners{
+  /*border-radius: :130px;*/
+  border-radius:50%;
+}

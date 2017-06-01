@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>A bit more advanced HTML Photo Gallery with JavaScript</title>
+
+<style type="text/css">
+body {
+	background: #B0B0B0;
+	color: #eee;
+	margin-top: 20px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+a {
+	color: #FFF;
+}
+a:hover {
+	color: yellow;
+	text-decoration: underline;
+}
+.thumbnails img {
+	height: 80px;
+	border: 4px solid #555;
+	padding: 1px;
+	margin: 0 10px 10px 0;
+}
+
+.thumbnails img:hover {
+	border: 4px solid #00ccff;
+	cursor:pointer;
+}
+
+#lightbox img {
+	border: 4px solid #444;
+	padding: 1px;
+	
+}
+
+/* style for the container element */
+#lightbox
+{
+	 background-color: rgba(8,8,8,0.75) ; 
+	 /* put some space between the container and image element */
+	 padding: 200px 0;
+	 /* set to full screen  */
+	 width: 100%;
+	 height: 100%;
+	 /* we hide it */
+	 display: none;
+	 /* move lightbox to top left corner of the screen
+	
+	   */
+	 position: fixed;
+	 top: 0px;
+	 left: 0px;
+	 
+	 
+}
+
+img#fullImage
+{
+	/* set center */
+	margin: 0 auto;
+	display:none;
+	opacity: 0.1;
+	
+ 
+}
+
+
+
+
+
+
+
+
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type = "text/javascript">
+
+		
+
+		function displayFullImage(ImageElement)
+		{
+		
+			//fade in the lignt box
+		   $("#lightbox").fadeIn(1000);
+		   //fade in the image and set new image size
+		   $("#fullImage").attr("src", ImageElement.src)
+		   .css({"opacity":"1", "transition": "transform 3s"})
+		   .fadeIn(1200)
+		   .animate({width: '600px',
+        			height: '350px'},1200)
+		   .dequeue(); //call dequeue to execute all effects at the same time
+
+		   $("#fullImage").css("transform","rotate(-365deg)")
+		   
+		
+		}
+		
+		
+		
+		function removeFullImage()
+		{
+			//rotate back
+			 $("#fullImage").css("transform","rotate(365deg)")
+			//fade out the lignt box
+			$("#lightbox").fadeOut(1200);
+			//fade out the image and set to original size
+		   $("#fullImage").animate({width: '200px',
+        			height: '112px'},1000)
+		   .fadeOut(1000).dequeue(); //call dequeue to execute all effects at the same time
+
+			
+		}
+
+//when document is ready, we begin to add event listener
+$(document).ready(function(){
+
+   // jQuery methods go here...
+   //add event listener in jQuery
+   	$("#img1").click(function(){displayFullImage(this)});
+	$("#img2").click(function(){displayFullImage(this)});
+	$("#img3").click(function(){displayFullImage(this)});	
+	$("#img4").click(function(){displayFullImage(this)});
+	$("#img5").click(function(){displayFullImage(this)});
+	$("#lightbox").click(function(){removeFullImage()});
+	$("#fullImage").click(function() {event.stopPropagation();
+  
+});
+
+
+
+});
+
+
+
+
+</script>
+</head>
+<body>
+
+<div class="gallery" align="center">
+	<h2>A bit more advanced Gallery with HTML and jQuery</h2>
+	<p>Created by Kan Ngamakeur and Xiaosong Li. Thank you for the image <a target="_blank" href="http://html-tuts.com/">HTML-TUTS.com</a>.</p>
+
+	<br />
+
+	<div class="thumbnails">
+		<img id = "img1"   name="img1" src="images/img1.jpg" alt=""/>
+		<img id = "img2"   name="img2" src="images/img2.jpg" alt=""/>
+		<img id = "img3"   name="img3" src="images/img3.jpg" alt=""/>
+		<img id = "img4"   name="img4" src="images/img4.jpg" alt=""/>
+		<img id = "img5"   name="img5" src="images/img5.jpg" alt=""/>
+	</div><br/>
+	
+	<div id = "lightbox" >
+				
+				<img  name="fullImage" src="" alt="full image" id = "fullImage" width = "200" height = "112"  />
+			
+	</div>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>dadada</title>
+  </head>
+  <body id="ee">
+    <!-- <div class="" id="ee"> -->
+    <p id = "p1"> dfghjklxcvbnm,.</p>
+    <button onclick="change()">clink here</button>
+
+    <!-- </div> -->
+    <script>
+      function change(){
+        document.getElementById("p1").style.color = "blue";
+        var element = document.getElementById("ee");
+        var para = document.createElement("p");
+        var node = document.createTextNode("This is new.");
+        para.appendChild(node);
+        element.appendChild(para);
+      }
+
+    </script>
+  </body>
+</html>

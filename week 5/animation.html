@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Animation</title>
+    <style media="screen">
+      body {
+        margin: 5px;
+      }
+      #myCanvas {
+        border: "white" 1px solid;
+      }
+    </style>
+    <script type="text/javascript">
+      //initialisation
+      function initCanvas() {
+        var ctx = document.getElementById('myCanvas').getContext('2d')
+        var cW = ctx.canvas.width, cH = ctx.canvas.height
+        var x = 0, y = 0
+
+        function animation() {
+          ctx.save() //method used for animation to transform all the changes
+          ctx.clearRect(0, 0, cW, cH) //erasing the canvas
+
+
+          ctx.fillStyle = "red"
+          ctx.fillRect(x, 100, 75, 75)
+          x++
+
+          ctx.fillStyle = "blue"
+          ctx.fillRect(150, y, 50, 50)
+          y++
+
+          ctx.restore()
+
+        }
+
+        var animationInterval = setInterval(animation, 5)
+      }
+      // window.addEventListener('load', function(event) {
+      //   initCanvas();
+      // })
+      window.onload=initCanvas;
+    </script>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="700" height="700"></canvas>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hc</title>
+  </head>
+  <body>
+
+    <p class="intro">The DOM is very useful</p>
+    <p class="intro">This example de<b>getElementsByClassName</b>methd.</p>
+    <p id="demo"></p>
+    <p id = "p1">helle world</p>
+    <button onclick="change()">click here to change Header</button>
+    <h1 id="header">OLD header</h1>
+    <button onclick="change1()">click here to change the color</button>
+    <p id = "p2">helle world</p>
+    <div id="div1">
+      <button onclick="change2()">click here to add a new paragraph</button>
+      <p id="p2">This is a paragraph</p>
+      <p id="p3">This is another paragraph</p>
+    </div>
+      <p id="dom">Hello Dila</p>
+
+
+    <script>
+      /*document.getElementById('demo').innerHTML = "hello class!";*/
+      var x = document.getElementsByClassName('intro');
+      document.getElementById("demo").innerHTML='The first paragraph (index 0) with class ="intro":'+ x[0].innerHTML;
+      function change(){
+        var element =  document.getElementById("header");
+        element.innerHTML = "New Header";
+      }
+
+
+      function change1(){
+       document.getElementById("p2").style.color = "blue";
+}
+
+      function change2(){
+
+        var para = document.createElement("p");
+        var node = document.createTextNode("This is new.");
+        para.appendChild(node);
+        var element = document.getElementById("div1");
+        element.appendChild(para);
+      }
+
+      var myElement = document.getElementById("intro");
+      document.getElementById("demo").innerHTML = "The text from the intro paragraph is "+ myElement[0].innerHTML;
+
+    </script>
+
+  </body>
+</html>

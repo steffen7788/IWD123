@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ldp</title>
+    <style media="screen">
+      #container{
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-top: 20px
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js">
+
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      JQuery
+      <hr>
+      <h1 id=heading1>heading one</h1>
+      <p id="parone">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h1 id=headingtwo>heading two</h1>
+      <p id="partwo">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <ul id="list">
+        <li>1234</li>
+        <li>1234</li>
+        <li>1234</li>
+        <li>1234</li>
+      </ul>
+      <input type="button" name="" value="botton 1">
+      <input type="submit" name="" value="Submit">
+      <input type="text" name="" value="">
+    </div>
+    <script>
+      $("h1#heading1").hide() //this will make my first heading hide
+      $("ul#list li:last").css("color","blue")
+      $("ul#list li:first").css("color","orange")
+      $("ul#list li:even").css("color","red")
+      $("ul#list li:odd").css("color","yellow")
+      $(":button").hide()
+
+    </script>
+  </body>
+</html>

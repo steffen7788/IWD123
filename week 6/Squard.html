@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Squard</title>
+    <style media="screen">
+      body {
+        margin: 5px;
+      }
+      #myCanvas {
+        border: "white" 1px solid;
+      }
+    </style>
+
+  </head>
+  <body>
+    <canvas id="myCanvas" width="700" height="700"></canvas>
+  </body>
+  <script>
+    var ctx = document.getElementById('myCanvas').getContext('2d')
+    var cW = ctx.canvas.width, cH = ctx.canvas.height
+    var x = [0,150];
+    var y = [100,0];
+    var squard = 50;
+    var speed = [5,5];
+    var fillcolors = ["red","blue"];
+    function animation() {
+      ctx.save()
+      ctx.clearRect(0, 0, cW, cH)
+      for(var i = 0;i<x.length; i++){
+        if (x[i]>=cW){x=-squard;} x[i] = x[i]+ speed[i];
+        if (y[i]>=cH){y=-squard;} y[i] = y[i]+ speed[i];
+        drawRect(x[i],y[i],fillcolors[i]);
+      }
+    }
+    function drawRect(x,y,fill){
+      ctx.beginPath();
+      ctx.fillStyle = fill;
+      ctx.fillRect(x, y, squard, squard)
+      ctx.fill();
+      ctx.closePath();
+    }
+    setInterval(animation, 30);
+  </script>
+</html>
